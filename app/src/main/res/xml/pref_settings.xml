@@ -1,0 +1,43 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="pref_sound_settings"
+        android:title="Sound">
+        <CheckBoxPreference
+            android:key="pref_sound"
+            android:summary="@string/pref_sound_summary"
+            android:title="@string/pref_sound"
+            android:defaultValue="false" />
+
+        <SeekBarPreference
+            android:key="pref_sound_level"
+            android:max="100"
+            android:defaultValue="80"
+            android:dependency="pref_sound"
+            android:title="@string/pref_sound_level" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_font_settings"
+        android:title="Font size">
+
+        <EditTextPreference
+            android:key="pref_textsize_old"
+            android:title="@string/pref_textsize"
+            android:dialogTitle="@string/pref_textsize_descr"
+            android:summary="@string/pref_textsize_summ"
+            android:defaultValue="14" />
+
+        <ListPreference
+            android:defaultValue="180"
+            android:entries="@array/pref_sync_frequency_titles"
+            android:entryValues="@array/pref_sync_frequency_values"
+            android:key="pref_textsize"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/pref_title_sync_frequency" />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
