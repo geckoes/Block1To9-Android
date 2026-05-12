@@ -97,13 +97,14 @@ The goal is to take the 2018 prototype, the special-move mechanic that I'm proud
 
 ## Build & run
 
-This 2018 snapshot **does not include the Gradle build files** (`build.gradle`, `settings.gradle`, `gradle/`). To build it today you'd need to:
+This 2018 snapshot is **partial on purpose** — it preserves the source as it was when I stopped working on it. The repository **does not include** the `AndroidManifest.xml`, the Gradle build files (`build.gradle`, `settings.gradle`, `gradle/`), or any signing config. To make it runnable today you'd need to:
 
 1. Wrap the `app/` source as a module in a fresh Android Studio project.
-2. Migrate the `android.support.v7` and `android.arch.persistence.room` imports to **AndroidX** (Android Studio's *Refactor → Migrate to AndroidX…* does most of it).
-3. Provide a top-level Gradle setup targeting a recent Android Gradle Plugin.
+2. Recreate the `AndroidManifest.xml` (declaring `MainActivity` and `Block1to9Activity`, the `CAMERA` permission isn't needed here, just the standard launcher entry).
+3. Migrate the `android.support.v7` and `android.arch.persistence.room` imports to **AndroidX** (Android Studio's *Refactor → Migrate to AndroidX…* does most of it).
+4. Provide a top-level Gradle setup targeting a recent Android Gradle Plugin.
 
-The code is here for reading more than running — the runnable version is the upcoming Kotlin rewrite.
+The code is here for reading more than running — the runnable version is the upcoming Kotlin rewrite (see [*Roadmap*](#roadmap) above).
 
 ---
 
